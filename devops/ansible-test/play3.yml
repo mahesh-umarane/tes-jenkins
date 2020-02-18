@@ -1,0 +1,9 @@
+---
+
+#Creating file
+
+- hosts: webserver
+  become: true
+  tasks:
+   - name: create directory
+     file: path=/home/test1/book.txt state=touch

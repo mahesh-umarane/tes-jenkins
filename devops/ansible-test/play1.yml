@@ -1,0 +1,7 @@
+---
+# My first demo playbook
+
+- hosts: webserver
+  tasks:
+  - name: Playbook to ping 
+    ping:

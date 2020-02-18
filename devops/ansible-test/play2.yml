@@ -1,0 +1,20 @@
+---
+
+# Playbook for apache installation
+
+- hosts: webserver
+  become: true
+  tasks:
+  - name: this is apache deployment
+    yum : 
+     - name: httpd
+       state: present
+       notify :
+        - apache notify
+    handlers:
+     - name: Apace notify
+       service:
+        - name: httpd
+          state: started
+       
+  
